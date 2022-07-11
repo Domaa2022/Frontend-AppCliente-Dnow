@@ -1,0 +1,153 @@
+
+#nav-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background-color: #E6E6E6;
+    align-items: center;
+    height: 49px;
+}
+
+#titulo{
+    font-family: 'BentonSans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 29px;
+    line-height: 29px;
+    text-align: center;
+    color: #00234A;
+}
+.flex{
+    display: flex;
+}
+
+.flex.centrar{
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.textoDrop{
+    font-family: 'BentonSans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 131.02%;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 0;
+    padding-left: 10px;
+}
+
+.imgRedonda {
+    width:30px;
+    height:30px;
+    border-radius:150px;
+    margin-right: 10px;
+}
+
+h1{
+    margin-bottom: 0;
+}
+
+.container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+}
+
+.dropdown-menu.show{
+    background-color: #E6E6E6;
+    top: -2px !important;
+    left: -5px !important;
+    border-color:#E6E6E6;
+    border-radius: 0px ;
+
+}
+
+.textoLaining{
+    font-family: 'BentonSans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 131.02%;
+    text-align: center;
+    color: #00234A;
+}
+
+.textoLaining.iniciar{
+    font-family: 'BentonSans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 131.02%;
+    /* identical to box height, or 21px */
+    text-align: center;
+    
+    color: #FFFFFF;
+}
+
+
+p{
+    margin-bottom: 0;
+}
+
+.imagenDnow{
+    height: 295.59px;
+    width: 366.18px;
+}
+
+.ImagenDnowC{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.texto{
+    font-family: 'bentonsans-cond-light-regular', sans-serif;
+    font-style: Condensed Light;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 131.02%;
+    /* or 21px */
+    text-align: center;
+    color: #000000;
+}
+
+.botones{
+    background: #004FA8;
+    border-radius: 15px;
+    width: 253px;
+    height: 57px;
+    border-color:#004FA8; 
+}
+
+.tituloSeccion{
+        font-family: 'BentonSans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 131.02%;
+    text-align: center;
+    color: #09051C;
+}
+
+.type {
+    width: 325px;
+    height: 57px;
+    background: #E6E6E6;
+    border-radius: 15px;
+    border-width: 0px;
+    margin-top: 10px;
+    
+}
+
+::placeholder {
+    text-align: center;
+    font-family: 'BentonSans Regular', BentonSans;
+}
+
+.botones.inicia{
+    width: 253px;
+    height: 57px;
+}
