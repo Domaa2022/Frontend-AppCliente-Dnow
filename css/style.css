@@ -130,16 +130,6 @@ p{
     color: #09051C;
 }
 
-.type {
-    width: 325px;
-    height: 57px;
-    background: #E6E6E6;
-    border-radius: 15px;
-    border-width: 0px;
-    margin-top: 10px;
-    
-}
-
 ::placeholder {
     text-align: center;
     font-family: 'BentonSans Regular', BentonSans;
@@ -148,4 +138,37 @@ p{
 .botones.inicia{
     width: 253px;
     height: 57px;
+}
+
+.formulario_input {
+    width: 325px;
+    height: 57px;
+    background: #E6E6E6;
+    border-radius: 15px;
+    border-width: 0px;
+    line-height: 57px;
+    margin-top: 10px;
+    transition: .3s ease all;
+    border: 3px solid   #E6E6E6;
+    ;
+}
+
+.formulario_input:focus {
+    border: 3px solid   #004FA8;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.formularioGrupo-incorrecto .formulario_input:focus{
+    border: 3px solid #FF0000;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.formularioGrupo-correcto .formulario_input{
+    border: 3px solid #29ce00;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }

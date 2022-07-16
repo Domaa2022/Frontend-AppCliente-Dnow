@@ -16,7 +16,15 @@ function displayPrincipal(){
     document.getElementById('menuUbicacion').style.display = 'none';
 }
 
-function displayUbicacion(){
-    document.getElementById('menuUbicacion').style.display = 'block';
-    document.getElementById('menuPrincipal').style.display = 'none';
+function cargarPaginaLocalizacion(){
+    location.href="ubicacion.html";
+}
+
+function cargarPaginaPago() {
+    location.href="pago.html";
+}
+
+
+function cargarPaginaDetalles() {
+    location.href="detalles.html";
 }
