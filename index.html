@@ -84,7 +84,11 @@
         </div>
 
         <div class="flex centrar">
-            <input type="submit" class="textoLaining iniciar botones inicia flex centrar" value="Iniciar Sección" onclick="EntrarApp(1)"></input>
+            <input type="submit" class="textoLaining iniciar botones inicia flex centrar" value="Iniciar Sección" onclick="Ingresar()"></input>
+        </div>
+        
+        <div class="flex centrar" id="errorInicio" style="display: none ;">
+            
         </div>
         
     </section>
@@ -115,14 +119,14 @@
         </div>
 
         <div class="flex centrar">
-            <input type="submit" class="textoLaining iniciar botones inicia flex centrar" value="Crear Cuenta" onclick="EntrarApp(2)"></input>
+            <input type="submit" class="textoLaining iniciar botones inicia flex centrar" value="Crear Cuenta" onclick="nuevoUsuario()"></input>
         </div>
-     
 
     </section>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/validadFormulario.js"></script>
     <script src="js/controladorLaining.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

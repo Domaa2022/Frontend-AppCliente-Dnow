@@ -28,6 +28,7 @@
             <div>
                 <h1 id="titulo">DNOW</h1>
             </div>
+
     
             <div>
                 <a href="carrito.html"> <i class="fa-solid fa-cart-shopping icono"> </i></a>
@@ -39,9 +40,8 @@
             </div>
         </nav>
     
-        <div class="conteinerTexto">
-            <p class="tituloBienvenida">Hola, Usuario</p>
-            <p class="titulo1">¿Que necesitas?</p>
+        <div id= "Bienvenida" class="conteinerTexto">
+            
         </div>
     
         <div class="flex centrar">
@@ -57,43 +57,8 @@
     
     
         <div class="container" >
-            <div class="row">
-                <div class="col-4">
-                    <div class="cardcategorias" onclick="displayCategoria()" >
-                        <img src="img/Hamburguesa.jpg" class="imgCategorias" alt="">
-                        <p class="letraCat">Hamburguesa</p>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="cardcategorias" >
-                        <img src="img/pizza.jpg" class="imgCategorias" alt="">
-                        <p class="letraCat">Pizza</p>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="cardcategorias" >
-                        <img src="img/sushi.jpg" class="imgCategorias" alt="">
-                        <p class="letraCat">Sushi</p>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="cardcategorias" >
-                        <img src="img/bebidas.jpg" class="imgCategorias" alt="">
-                        <p class="letraCat">Bebidas</p>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="cardcategorias" >
-                        <img src="img/farmacia.jpg" class="imgCategorias" alt="">
-                        <p class="letraCat">Farmacia</p>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="cardcategorias" >
-                        <img src="img/Electronica.jpg" class="imgCategorias" alt="">
-                        <p class="letraCat">Electronica</p>
-                    </div>
-                </div>
+            <div class="row" id="containerCategorias">
+                
             </div>
         </div>
     
@@ -144,71 +109,14 @@
             <div style="margin-right:20px">
                 <i class="fa-solid fa-arrow-left" onclick="displayPrincipal()"></i>
             </div>
-            <div>
-                <h1 id="titulo">HAMBURGESA</h1>
+            <div id="titutoCategoria">
+                
             </div>
         </nav>
-
-        <div class="seccionEmpresa" data-toggle="modal" data-target="#exampleModalCenter" >
-            <div>
-                <img src="img/Bannaer/mcdonal.png" alt="" class="imgEmpresa">
-            </div>
+        <div id="conteiner-Empresas">
             
-            <div class="flex" style="align-items: center;">
-                <img src="img/Logos/McDonalds-logo.png" alt="" class="imgRedondaEmpresa">
-                <div style="margin-top: 7px; margin-left: 10px;">
-                    <p class="tituloEmpresa">Mcdonald's</p>
-                    <p class="titloDescripcionEmpresa" style="margin-top: 2px;">Hamburgesa-Papas</p>
-                </div>
-            </div>
-
         </div>
-
-        <div class="seccionEmpresa" data-toggle="modal" data-target="#exampleModalCenter">
-            <div>
-                <img src="img/Bannaer/wendy.webp" alt="" class="imgEmpresa">
-            </div>
-            
-            <div class="flex" style="align-items: center;">
-                <img src="img/Logos/wendys-logo-6.png" alt="" class="imgRedondaEmpresa">
-                <div style="margin-top: 7px; margin-left: 10px;">
-                    <p class="tituloEmpresa">Wendy's</p>
-                    <p class="titloDescripcionEmpresa" style="margin-top: 2px;">Hamburgesa-Papas</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="seccionEmpresa" data-toggle="modal" data-target="#exampleModalCenter">
-            <div>
-                <img src="img/Bannaer/bigos.jpg" alt="" class="imgEmpresa">
-            </div>
-            
-            <div class="flex" style="align-items: center;">
-                <img src="img/Logos/LOGO-BIGOS-REDNDO.png" alt="" class="imgRedondaEmpresa">
-                <div style="margin-top: 7px; margin-left: 10px;">
-                    <p class="tituloEmpresa">Bigos</p>
-                    <p class="titloDescripcionEmpresa" style="margin-top: 2px;">Hamburgesa-Papas</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="seccionEmpresa" data-toggle="modal" data-target="#exampleModalCenter">
-            <div>
-                <img src="img/BurgerKing.webp" alt="" class="imgEmpresa">
-            </div>
-            
-            <div class="flex" style="align-items: center;">
-                <img src="img/Logo-Burger-King.png" alt="" class="imgRedondaEmpresa">
-                <div style="margin-top: 7px; margin-left: 10px;">
-                    <p class="tituloEmpresa">BurgerKing</p>
-                    <p class="titloDescripcionEmpresa" style="margin-top: 2px;">Hamburgesa-Papas</p>
-                </div>
-            </div>
-
-
-        </div>
+    
     </section>
     
 
@@ -224,35 +132,12 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <h5 class="modal-title tituloModalEmpresa" id="exampleModalCenterTitle">BurgerKing</h5>
+            <div id="modalEmpresaTitulo">
+
             </div>
-            <div class="modal-body">
-                <div class="flex centrar" style="margin-top: 10px ;" data-toggle="modal" data-target="#exampleModalCenter2">
-                    <div class="popular flex centrar2">
-                        <div class="flex ">
-                            <img src="img//Hamburgesa/Hamburgesa con queso.jpg" class="imgRedondaPopular" alt="">
-                            <p class="textopopular">Hamburguesa con queso</p>
-                        </div>
-                        <p class="precio"> $20</p>
-                    </div>
-                </div>
-                <div class="flex centrar" style="margin-top: 10px ;" data-toggle="modal" data-target="#exampleModalCenter2">
-                    <div class="popular flex centrar2">
-                        <div class="flex ">
-                            <img src="img//Hamburgesa/Hamburgesa con queso.jpg" class="imgRedondaPopular" alt="">
-                            <p class="textopopular">Hamburguesa con queso</p>
-                        </div>
-                        <p class="precio"> $20</p>
-                    </div>
-                </div>
-                <div class="flex centrar" style="margin-top: 10px ;" data-toggle="modal" data-target="#exampleModalCenter2">
-                    <div class="popular flex centrar2">
-                        <div class="flex ">
-                            <img src="img//Hamburgesa/Hamburgesa con queso.jpg" class="imgRedondaPopular" alt="">
-                            <p class="textopopular">Hamburguesa con queso</p>
-                        </div>
-                        <p class="precio"> $20</p>
-                    </div>
+            
+            </div>
+            <div class="modal-body" id="modalEmpresaBody">
             </div>
             
         </div>
@@ -277,6 +162,7 @@
                     <input type="number" class="cantidad">
                 </div>
 
+                <img src="" alt="">
                 
                 
             </div>
@@ -293,8 +179,8 @@
         </div>
         </div>
     </div>
-
-<script src="js/controlador.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/controladorApp.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

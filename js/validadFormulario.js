@@ -2,6 +2,7 @@ const formularioRegistro = document.getElementById('formularioRegistro');
 const formularioInicioSesion = document.getElementById('formularioInicioSesion');
 const inputsRegistro = document.querySelectorAll('#formularioRegistro input');
 const inputsInicioSesion = document.querySelectorAll('#formularioInicioSesion input');
+var usuarioActivo 
 
 const expresiones = {
 	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
@@ -87,25 +88,79 @@ const validarCampo = (expresion, input, campo) => {
 	}
 }
 
+function Ingresar() {
+	var usuario = document.getElementById('usuario').value
+	var contraseña = document.getElementById('contraseña').value
+	var usuarioIngresado = false
 
 
+	axios({
+		url : 'http://localhost:3000/usuarios',
+		method : 'get',
+		ResponseType : 'json'
+	}).then(res => {
+		(res.data).forEach( e => {
+			if(e.correo == usuario && e.contraseña == contraseña){
+				window.location.href = './Appcliente.html'
+				sessionStorage.setItem('usuario', JSON.stringify(e))
+				usuarioIngresado = true
+			}
+		});
+		if(!usuarioIngresado){
+		document.getElementById('errorInicio').style.display = "block";
+		document.getElementById('errorInicio').innerHTML = '<p class="texto" style="color:red ;"> usuario o contraseña incorrecta  </p>' }
 
-function EntrarApp(a) {
-
-	switch(a){
-		case 1: 
-		if(campoInicioSesion.UsuariorRegistrado && campoInicioSesion.ContraseñaRegistrada){
-			window.location.href = "Appcliente.html";
-		}else{
-			alert("Faltan campos por llenar");
-		}
-		break;
-		case 2:
-		if(campoRegistro.Usuario && campoRegistro.Contraseña && campoRegistro.Correo){
-			window.location.href = "Appcliente.html";
-		}else{
-			alert("Faltan campos por llenar");
-		}
-	}
-	
+	}).catch(err => {
+		console.log(err)
+	})
 }
+
+function nuevoUsuario(){
+	var usuario = document.getElementById('usuarionuevo').value
+	var contraseña = document.getElementById('contraseñaNuevo').value
+	var correo = document.getElementById('correo').value
+
+	let usuarioNuevo =
+	{
+		nombre: usuario,
+		correo: correo,
+		contraseña: contraseña,
+		latitud: "",
+		longitud: "",
+		ordenes: [],
+		pedidos: [],
+		metodoPago: []
+	}
+
+	axios({
+		url : 'http://localhost:3000/usuarios',
+		method : 'post',
+		data : usuarioNuevo,
+		ResponseType : 'json'
+	}).then(res => {
+		console.log(res.data)
+		ingresarUsuario(usuario, contraseña)
+	}).catch(err => {
+		console.log(err)
+	}
+	)
+}
+
+function ingresarUsuario(usuario, contraseña){
+	axios({
+		url : 'http://localhost:3000/usuarios',
+		method : 'get',
+		ResponseType : 'json'
+	}).then(res => {
+		(res.data).forEach( e => {
+			if(e.nombre == usuario && e.contraseña == contraseña){
+				window.location.href = './Appcliente.html'
+				sessionStorage.setItem('usuario', JSON.stringify(e))
+			}
+		});
+	}).catch(err => {
+		console.log(err)
+	}
+	)
+}
+
