@@ -178,6 +178,7 @@ function ProcesarOrder(idCategoria,idEmpresa,idProducto){
             }).then((res)=>{
                 console.log(res.data)
                 alert("Producto agregado al carrito")
+                $('#exampleModalCenter2').modal('hide');
             }).catch((err)=>{
                 console.log(err)
             })
@@ -186,9 +187,7 @@ function ProcesarOrder(idCategoria,idEmpresa,idProducto){
 }
 
 
-function cerrarModal() {
-    $('#exampleModalCenter2').modal('hide');
-}
+
 
 
 

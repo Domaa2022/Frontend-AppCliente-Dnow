@@ -101,7 +101,7 @@ function Ingresar() {
 	}).then(res => {
 		(res.data).forEach( e => {
 			if(e.correo == usuario && e.contraseña == contraseña){
-				window.location.href = './Appcliente.html'
+				window.location.href = './html/Appcliente.html'
 				sessionStorage.setItem('usuario', JSON.stringify(e))
 				usuarioIngresado = true
 			}
@@ -154,7 +154,7 @@ function ingresarUsuario(usuario, contraseña){
 	}).then(res => {
 		(res.data).forEach( e => {
 			if(e.nombre == usuario && e.contraseña == contraseña){
-				window.location.href = './Appcliente.html'
+				window.location.href = './html/Appcliente.html'
 				sessionStorage.setItem('usuario', JSON.stringify(e))
 			}
 		});
