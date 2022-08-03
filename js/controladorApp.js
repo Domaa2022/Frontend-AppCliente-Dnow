@@ -1,11 +1,13 @@
 var clienteActivo = JSON.parse(sessionStorage.getItem('usuario'));
-console.log(clienteActivo);
+console.log(clienteActivo)
+
 
 document.getElementById('Bienvenida').innerHTML = 
 `
 <p class="tituloBienvenida">Hola, ${clienteActivo.nombre}</p>
 <p class="titulo1">¿Que necesitas?</p>
 `
+
 
 
 function generarCategorias(){
@@ -40,15 +42,11 @@ function generarCategorias(){
 generarCategorias();
 
 
-function cerrarModal() {
-    $('#exampleModalCenter2').modal('hide');
-}
-
-function displayCategoria(id){
+function displayCategoria(idCategoria){
     document.getElementById('menuEmpresa').style.display = 'block';
     document.getElementById('menuPrincipal').style.display = 'none';
     axios({
-        url : 'http://localhost:3000/categorias/' + id,
+        url : 'http://localhost:3000/categorias/' + idCategoria,
         method : 'get',
         ResponseType : 'json'
     }).then((res)=>{
@@ -65,7 +63,7 @@ function displayCategoria(id){
         
         for (let i = 0; i < x.empresas.length; i++) {
             document.getElementById('conteiner-Empresas').innerHTML +=
-            `<div class="seccionEmpresa" onclick="modalEmpresaProducto('${id}',${i})">
+            `<div class="seccionEmpresa" onclick="modalEmpresaProducto('${idCategoria}',${i})">
             <div>
                 <img src="${x.empresas[i].banner}" alt="" class="imgEmpresa">
             </div>
@@ -89,13 +87,13 @@ function displayCategoria(id){
     
 }
 
-function modalEmpresaProducto(id,i){
+function modalEmpresaProducto(idCategoria,idEmpresa){
     axios({
-        url : 'http://localhost:3000/categorias/' + id,
+        url : 'http://localhost:3000/categorias/' + idCategoria,
         method : 'get',
         ResponseType : 'json'
     }).then((res)=>{
-        let x = res.data.empresas[i]
+        let x = res.data.empresas[idEmpresa]
         $('#exampleModalCenter').modal('show');
         {
             document.getElementById('modalEmpresaTitulo').innerHTML = ''
@@ -107,7 +105,7 @@ function modalEmpresaProducto(id,i){
         for (let j = 0; j < x.productos.length; j++) {
             document.getElementById('modalEmpresaBody').innerHTML += `
             <div class="flex centrar" style="margin-top: 10px ;" data-toggle="modal" data-target="#exampleModalCenter2">
-                    <div class="popular flex centrar2">
+                    <div class="popular flex centrar2" onclick="pedirProducto('${idCategoria}',${idEmpresa},${j})">
                         <div class="flex ">
                             <img src="${x.productos[j].imagen}" class="imgRedondaPopular" alt="">
                             <p class="textopopular">${x.productos[j].nombreProducto}</p>
@@ -119,9 +117,80 @@ function modalEmpresaProducto(id,i){
             
         }
 
+    }).catch(err => {
+        console.log(err)
     })
 
 }
+
+function pedirProducto (idCategoria,idEmpresa,idProducto){
+    axios({
+        url : 'http://localhost:3000/categorias/' + idCategoria,
+        method : 'get',
+        ResponseType : 'json'
+    }).then((res)=>{
+        let x = res.data.empresas[idEmpresa].productos[idProducto]
+        let product = x.nombreProducto
+        let precio = x.precio
+        let imagen = x.imagen
+
+
+        document.getElementById('productoSolicitado').innerHTML =`
+        <p class="tituloModalPedir">${x.nombreProducto}</p>
+                    <p class="tituloModalPedir">$ ${x.precio}</p>`
+
+        document.getElementById('modalPedirBotton').innerHTML = `
+        <button type="button" class="btn botonesPedir " onclick="cerrarModal()"> 
+        <p class="textoBotonesPedir" style="margin-top: -3px ;">Cerrar</p>
+        </button> 
+        <button type="button" class="btn botonesPedir textoBotonesPedir" onclick="ProcesarOrder('${idCategoria}','${idEmpresa}','${idProducto}')">
+        <p class="textoBotonesPedir" style="margin-top: -3px ">Procesar Orden</p>
+        </button>
+        `
+
+        
+    })
+}
+
+function ProcesarOrder(idCategoria,idEmpresa,idProducto){
+    axios({
+        url : 'http://localhost:3000/categorias/' + idCategoria,
+        method : 'get',
+        ResponseType : 'json'
+    }).then((res)=>{
+        x = res.data.empresas[idEmpresa].productos[idProducto]
+        let cantidad = document.getElementById('cantidadProducto').value
+        var product ={
+            nombreProducto : x.nombreProducto,
+            precio : x.precio,
+            imagen : x.imagen,
+            cantidad : cantidad
+        }
+
+        if(cantidad == ""){
+            alert("Ingrese una cantidad")
+        }else{
+            axios({
+                url : 'http://localhost:3000/usuarios/' + clienteActivo._id,
+                method : 'post',
+                ResponseType : 'json',
+                data : product
+            }).then((res)=>{
+                console.log(res.data)
+                alert("Producto agregado al carrito")
+            }).catch((err)=>{
+                console.log(err)
+            })
+        }
+    })
+}
+
+
+function cerrarModal() {
+    $('#exampleModalCenter2').modal('hide');
+}
+
+
 
 function displayPrincipal(){
     document.getElementById('menuEmpresa').style.display = 'none';

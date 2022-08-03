@@ -124,6 +124,7 @@
 
 
 
+
             <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -152,14 +153,12 @@
             
             <div class="modal-body">
 
-                <div class="flex" style="justify-content: space-around;">
-                    <p class="tituloModalPedir">Wooper</p>
-                    <p class="tituloModalPedir">$25</p>
+                <div class="flex" style="justify-content: space-around;" id="productoSolicitado">
                 </div>
 
                 <div class="flex" style="justify-content: space-around;" >
                     <p class="tituloModalPedir">Ingrese la cantidad</p>
-                    <input type="number" class="cantidad">
+                    <input id="cantidadProducto" type="number" class="cantidad">
                 </div>
 
                 <img src="" alt="">
@@ -167,13 +166,8 @@
                 
             </div>
 
-            <div class="flex" style="justify-content: space-around; margin-bottom: 10px;" >
-                <button type="button" class="btn botonesPedir " onclick="cerrarModal()"> 
-                    <p class="textoBotonesPedir" style="margin-top: -3px ;">Cerrar</p>
-                </button>
-                <button type="button" class="btn botonesPedir textoBotonesPedir" onclick="cerrarModal()">
-                    <p class="textoBotonesPedir" style="margin-top: -3px ">Procesar Orden</p>
-                </button>
+            <div class="flex" style="justify-content: space-around; margin-bottom: 10px;" id="modalPedirBotton" >
+
             </div>
             
         </div>
