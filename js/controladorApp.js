@@ -164,7 +164,8 @@ function ProcesarOrder(idCategoria,idEmpresa,idProducto){
             nombreProducto : x.nombreProducto,
             precio : x.precio,
             imagen : x.imagen,
-            cantidad : cantidad
+            cantidad : cantidad,
+            descripcion: res.data.empresas[idEmpresa].descripcion
         }
 
         if(cantidad == ""){
