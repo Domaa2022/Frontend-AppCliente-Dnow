@@ -397,8 +397,7 @@ border-radius: 15px;
 
 #maps{
 width: 100%;
-height: 500px;
-background: url(/img/Maps.png) ;
+height: 700px;
 }
 
 .textoMaps{
@@ -481,6 +480,7 @@ height: 41.57px;
 background: #E6E6E6;
 border-radius: 15px;
 border: 0.1px  #E6E6E6 solid;
+padding: 10px;
 }
 
 .centrarPago{
