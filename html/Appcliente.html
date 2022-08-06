@@ -22,7 +22,7 @@
             </div>
     
             <div>
-                <a href="detalles.html"><i class="fa-solid fa-question icono"></i></a>
+                <i onclick="" class="fa-solid fa-question icono"></i>
             </div>
     
             <div>
@@ -35,7 +35,7 @@
             </div>
     
             <div>
-                <a href="index.html"><i class="fa-solid fa-arrow-right-from-bracket icono"></i></a>
+                <a href="/index.html"><i class="fa-solid fa-arrow-right-from-bracket icono"></i></a>
                 
             </div>
         </nav>
@@ -45,7 +45,7 @@
         </div>
     
         <div class="flex centrar">
-            <div class="textoLaining iniciar botonLocation inicia flex centrar" onclick="displayUbicacion()">
+            <div class="textoLaining iniciar botonLocation inicia flex centrar" onclick="ubicacion()">
                 <i class="fa-solid fa-location-dot" style="margin-right: 10px;"></i>
                 <p class="tituloLocation"> Ubicación</p>
             </div>
@@ -67,37 +67,37 @@
             <p class="titulocat">Más populares</p>
         </div>
         <div class="flex centrar" style="margin-top: 10px ;" data-toggle="modal" data-target="#exampleModalCenter2">
-            <div class="popular flex centrar2">
+            <div class="popular flex centrar2" onclick="pedirProducto('62e97457c0ca5917265208b2',0,1)">
                 <div class="flex ">
-                    <img src="img//Hamburgesa/Hamburgesa con queso.jpg" class="imgRedondaPopular" alt="">
+                    <img src="/img/Hamburguesas/Mcdonal's/doble queso.jpg" class="imgRedondaPopular" alt="">
                     <p class="textopopular">Hamburguesa con queso</p>
+                </div>
+                <p class="precio"> $30</p>
+            </div>
+        </div>
+        <div class="flex centrar" style="margin-top: 10px ;" data-toggle="modal" data-target="#exampleModalCenter2">
+            <div class="popular flex centrar2" onclick="pedirProducto('62e97457c0ca5917265208b3',0,0)">
+                <div class="flex ">
+                    <img src="/img/Pîzza/Pizza hut/queso.jpg" class="imgRedondaPopular" alt="">
+                    <p class="textopopular">Pizza de queso </p>
                 </div>
                 <p class="precio"> $20</p>
             </div>
         </div>
         <div class="flex centrar" style="margin-top: 10px ;" data-toggle="modal" data-target="#exampleModalCenter2">
-            <div class="popular flex centrar2">
+            <div class="popular flex centrar2" onclick="pedirProducto('62e97457c0ca5917265208b5',1,1)">
                 <div class="flex ">
-                    <img src="img/Pizza/pizza con orrilla de queso.jpg" class="imgRedondaPopular" alt="">
-                    <p class="textopopular">Pizza con orrilla de queso</p>
+                    <img src="/img/Bebidas/cerveza/barena.jpg" class="imgRedondaPopular" alt="">
+                    <p class="textopopular">Barena</p>
                 </div>
-                <p class="precio"> 15</p>
+                <p class="precio"> $30</p>
             </div>
         </div>
         <div class="flex centrar" style="margin-top: 10px ;" data-toggle="modal" data-target="#exampleModalCenter2">
-            <div class="popular flex centrar2">
+            <div class="popular flex centrar2" onclick="pedirProducto('62e97457c0ca5917265208b4',0,0)">
                 <div class="flex ">
-                    <img src="img/coca.webp" class="imgRedondaPopular" alt="">
-                    <p class="textopopular">Cocacola portatil</p>
-                </div>
-                <p class="precio"> $8</p>
-            </div>
-        </div>
-        <div class="flex centrar" style="margin-top: 10px ;" data-toggle="modal" data-target="#exampleModalCenter2">
-            <div class="popular flex centrar2">
-                <div class="flex ">
-                    <img src="img/ibuprofeno.webp" class="imgRedondaPopular" alt="">
-                    <p class="textopopular">ibuprofeno</p>
+                    <img src="/img/Sushi/furiwa/Sushi Kyoto.jpg" class="imgRedondaPopular" alt="">
+                    <p class="textopopular">Sushi Kyoto</p>
                 </div>
                 <p class="precio"> $20</p>
             </div>

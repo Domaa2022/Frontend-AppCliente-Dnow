@@ -100,7 +100,7 @@ function Ingresar() {
 		ResponseType : 'json'
 	}).then(res => {
 		(res.data).forEach( e => {
-			if(e.correo == usuario && e.contraseña == contraseña){
+			if(e.nombre == usuario && e.contraseña == contraseña){
 				window.location.href = './html/Appcliente.html'
 				sessionStorage.setItem('usuario', JSON.stringify(e))
 				usuarioIngresado = true

@@ -113,7 +113,7 @@ function modalEmpresaProducto(idCategoria,idEmpresa){
                         <p class="precio"> $ ${x.productos[j].precio}</p>
                     </div>
                 </div>
-                `
+            `
             
         }
 
@@ -188,8 +188,25 @@ function ProcesarOrder(idCategoria,idEmpresa,idProducto){
 }
 
 
+function cerrarModal(){
+    $('#exampleModalCenter2').modal('hide');
+}
 
 
+
+function ubicacion(){
+    axios({
+        url : 'http://localhost:3000/usuarios/' + clienteActivo._id,
+        method : 'get',
+        ResponseType : 'json'
+    }).then(res => {
+        if( res.data.latitud == '' && res.data.longitud == ''){
+            window.location.href = '../html/ubicacion.html' 
+        }else{
+            alert("ubicacion ya establecida")
+        }
+    })
+}
 
 
 function displayPrincipal(){

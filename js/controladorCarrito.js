@@ -114,7 +114,7 @@ function ProcesarOrden(){
         ResponseType : 'json'
     }).then((res)=>{
         x = res.data 
-        let numeroPedido = x.pedidos.length + 1
+        let numeroPedido = (Math.random() * (1000 - 1) + 1).toFixed();
         let encargo = {
         numeroPedido : numeroPedido,
         usuario : x.nombre,
@@ -123,7 +123,11 @@ function ProcesarOrden(){
         precioPedido : 0,
         ISV : 0,
         PrecioTotal :0,
-        productos : []
+        productos : [],
+        Estado: 'Pendiente',
+        fechaEntrega: String(date.getDate()).padStart(2, '0') + '/' + String(date.getMonth() + 1).padStart(2, '0') + '/' + date.getFullYear(),
+        Recibe: '',
+        correoMotorista: ""
         }
 
         for (let i = 0; i < x.ordenes.length; i++) {
@@ -131,6 +135,7 @@ function ProcesarOrden(){
                 nombreProducto : x.ordenes[i].nombreProducto,
                 cantidad: x.ordenes[i].cantidad,
                 precio: x.ordenes[i].precio,
+                imagen: x.ordenes[i].imagenProducto
     
             });
             subtotal += x.ordenes[i].precio
@@ -150,8 +155,8 @@ function ProcesarOrden(){
         }).then( res => {
             console.log(res.data)
             sessionStorage.setItem('usuario', JSON.stringify(res.data))
-            ActualizarCarrito()
-            window.location.href = '../html/ubicacion.html'
+            Ubicacion()
+            
         }).catch ( err => {
             console.log (err)
         })
@@ -163,22 +168,7 @@ function ProcesarOrden(){
 
 }
 
-function ActualizarCarrito(){
 
-    axios({
-        url : 'http://localhost:3000/usuarios/' + clienteActivo._id,
-        method : 'delete',
-        ResponseType : 'json',
-
-    }).then( res => {
-        console.log("Adios")
-        console.log(res.data)
-    }).catch ( err => {
-        console.log (err)
-    })
-
-
-
-
-
+function Ubicacion(){
+    window.location.href = '../html/ubicacion.html'
 }
