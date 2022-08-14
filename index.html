@@ -9,24 +9,17 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/ddb99db5a0.js" crossorigin="anonymous"></script>
     <title>DNOW</title>
+    <link rel="manifest" href="./manifest.json">
+    <script>
+        if("serviceWorker" in navigator){
+            navigator.serviceWorker.register("sw.js");
+        }
+    </script>
 </head>
 <body>
 
     <nav id="nav-bar">
         <div class="dropdown ">
-            <a class="btn " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa-solid fa-grip-lines"></i>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item flex" href="#">
-                    <i class="fa-solid fa-motorcycle"></i> 
-                    <p class="textoDrop">App de motoristas</p>
-                </a>
-                <a class="dropdown-item flex" href="#">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <p class="textoDrop">Pagina de administradores</p>
-                </a>
-            </div>
         </div>
 
         <div>
