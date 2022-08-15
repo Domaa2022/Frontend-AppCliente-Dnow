@@ -24,7 +24,7 @@ function generarCategorias(){
         (res.data).forEach(e => {
             document.getElementById('containerCategorias').innerHTML += 
             `
-            <div class="col-sm-4 col-xl-3">
+            <div class="col-4">
                     <div class="cardcategorias" onclick="displayCategoria('${e._id}')" >
                         <img src="${e.imagen}" class="imgCategorias" alt="">
                         <p class="letraCat">${e.nombreCategoria}</p>
